@@ -19,7 +19,7 @@ jobs:
           needsBioc: true
           buildSubDirectory: './'
       - name: Upload NAMESPACE file
-      - run: |
+        run: |
           git config user.name ruiheesi
           git config user.email rui.he@nih.gov
           git add ./NAMESPACE
