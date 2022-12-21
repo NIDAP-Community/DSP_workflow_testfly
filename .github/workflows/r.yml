@@ -4,6 +4,8 @@ on:
   pull_request:
     types:
       - closed
+    branches:
+      - main
 jobs:
   Generating-NAMESPACE-file:
     if: github.event.pull_request.merged == true
@@ -16,15 +18,12 @@ jobs:
           action: 'all'
           needsBioc: true
           buildSubDirectory: './'
-  Upload-NAMESPACE:
-      runs-on: ubuntu-18.04
-      steps:
-      - uses: actions/checkout@v3
+      - name: Upload NAMESPACE file
       - run: |
           git config user.name ruiheesi
           git config user.email rui.he@nih.gov
           git add ./NAMESPACE
-          git commit -a -m "generated NAMESPACE"
+          git commit -amend -m "generated NAMESPACE"
           git push
         
       
