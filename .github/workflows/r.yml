@@ -19,8 +19,8 @@ jobs:
       - run: |
           git config user.name ruiheesi
           git config user.email rui.he@nih.gov
-          git add .
-          git commit -m "generated NAMESPACE"
+          git add ./NAMESPACE
+          git commit -a -m "generated NAMESPACE"
           git push
         
       
