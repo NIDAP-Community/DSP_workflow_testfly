@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: R Build and Checks
-        uses: Swechhya/R-actions@v1.2
+        uses: ruiheesi/R-actions_check_pkg
         with:
-          action: 'all'
+          action: 'check'
           needsBioc: true
           buildSubDirectory: './'
       - name: Upload NAMESPACE file
@@ -23,7 +23,7 @@ jobs:
           git config user.name ruiheesi
           git config user.email rui.he@nih.gov
           git add ./NAMESPACE
-          git commit -amend -m "generated NAMESPACE"
+          git commit -amend -m "Upload generated NAMESPACE"
           git push
         
       
