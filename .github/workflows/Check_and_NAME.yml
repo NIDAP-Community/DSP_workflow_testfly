@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: R Build and Checks
-        uses: ruiheesi/R-actions_check_pkg@v1.6
+        uses: ruiheesi/R-actions_check_pkg@v1
         with:
           action: 'check'
           needsBioc: true
