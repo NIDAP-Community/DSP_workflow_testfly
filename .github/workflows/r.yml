@@ -9,11 +9,11 @@ on:
 jobs:
   Generating-NAMESPACE-file:
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: R Build and Checks
-        uses: ruiheesi/R-actions_check_pkg@v1
+        uses: ruiheesi/R-actions_check_pkg@v1.1
         with:
           action: 'check'
           needsBioc: true
